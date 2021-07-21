@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog/role_entity.yaml
+  - include:
+      file: db.changelog/user_entity.yaml

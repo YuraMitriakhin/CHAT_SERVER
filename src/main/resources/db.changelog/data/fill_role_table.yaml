@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 101
+      author: yura
+      comment: "Create admin and user roles"
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "ADMIN"
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "USER"
+      rollback:
+        - delete:
+            tableName: roles
+            where: name in ('ADMIN', 'USER')
